@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fbe0e6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* General Styles */
+    h1 {
+      font-family: 'Sacramento', cursive;
+      font-size: 50px;
+      color: #d14f79;
+      text-align: center;
+      margin-top: 0;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    h2 {
+      font-size: 30px;
+      color: #f38ba0;
+      text-align: center;
+      font-weight: 400;
+      margin-top: 20px;
+    }
+
+    .heart {
+      width: 100px;
+      height: 100px;
+      background-color: #f38ba0;
+      transform: rotate(-45deg);
+      margin-top: 30px;
+      position: relative;
+      animation: bounce 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #f38ba0;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    .cta-button {
+      background-color: #d14f79;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 25px;
+      margin-top: 20px;
+      transition: all 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #f38ba0;
+      transform: scale(1.1);
+    }
+
+    .message-box {
+      width: 80%;
+      max-width: 500px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .message-box p {
+      margin: 0;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .forgiveness-section {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .forgiveness-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .forgiveness-button {
+      background-color: #d14f79;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 25px;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+
+    .forgiveness-button:hover {
+      background-color: #f38ba0;
+      transform: scale(1.1);
+    }
+
+    .forgiveness-button.no {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .forgiveness-button.no:hover {
+      background-color: #ccc;
+      transform: none;
+    }
+
+    .flowers {
+      display: none;
+      margin-top: 30px;
+      font-size: 30px;
+      color: #d14f79;
+      animation: flowerAnimation 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes flowerAnimation {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .no.running {
+      position: absolute;
+      transition: left 0.2s ease, top 0.2s ease;
+    }
+
+    /* Page 1 Styles */
+    .intro-page {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .intro-page img {
+      width: 300px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .intro-text {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* Page 3 (Thank You Muskaan) */
+    .thank-you-page {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .thank-you-page p {
+      font-size: 20px;
+      margin: 10px 0;
+      line-height: 1.8;
+    }
+
+    .thank-you-page .cta-button {
+      margin-top: 30px;
+      font-size: 18px;
+    }
+
+    .thank-you-page img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      margin: 15px;
+      border-radius: 10px;
+    }
+
+    .thank-you-page .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1 (Apology Introduction Page) -->
+  <div class="intro-page" id="intro-page">
+    <img src="WhatsApp Image 2024-11-11 at 12.54.50.jpeg" alt="Ritik's Heart" />
+    <p class="intro-text">Hey, I'm Ritik(You know me as polar bear). I'm really sorry for what I did and it still pains me sweetheart. Please take a moment to read what's inside my heart...</p>
+    <button class="cta-button" onclick="goToApologyPage()">Take a peek inside Ritik's heart 💖</button>
+  </div>
+
+  <!-- Page 2 (Interactive Apology Page) -->
+  <div class="apology-page" id="apology-page" style="display: none;">
+    <h1>I'm Sorry, My Love 💖</h1>
+    <h2>Can we make things right?</h2>
+    
+    <div class="heart"></div>
+
+    <div class="message-box">
+      <p>Mujhe maaf krdo kal ke liye mera bachcha, mujhe sahi samay pr sorry bol dena chahie, but main sirf tumhe hi pasand kra hu aur tumhe hi pyaar krta rhunga 💕</p>
+      
+      <button class="cta-button" onclick="location.href='ritiksingh12@hotmail.com'">Let's Talk sweetheart 💬</button>
+    </div>
+
+    <!-- Forgiveness Section -->
+    <div class="forgiveness-section">
+      <p>Will you forgive me? 💕</p>
+
+      <div class="forgiveness-buttons">
+        <button class="forgiveness-button yes" onclick="showForgivenessResponse()">Yes</button>
+        <button class="forgiveness-button no" id="no-button" disabled>No</button>
+      </div>
+
+      <!-- Flowers Animation and Response -->
+      <div class="flowers" id="flowers">
+        🌸🌷💐🌸🌷💐
+      </div>
+      <div class="forgiveness-response" id="forgiveness-response" style="display: none;">
+        <p>Thank you for forgiving me! 😘</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 3 (Thank You Muskaan) -->
+  <div class="thank-you-page" id="thank-you-page" style="display: none;">
+    <h1>Thank You, Rasmalai 💖</h1>
+    <p>There are no words that can truly capture how I feel, but I want you to know how much I appreciate everything about you.
+     Your almond eyes shine brighter than any star in the sky. They captivate me, and every time I look into them, I feel like I've found home.</p>
+    <p>But it's not just your beauty that leaves me breathless. It's your heart—the kindness, compassion, and love that you carry in it. You make me want to be the best version of myself, for you and for us.</p>
+    <p>You are everything to me. I love you more than words can express.</p>
+
+    <!-- Gallery of Muskaan's Images -->
+    <div class="image-gallery">
+      <img src="WhatsApp Image 2024-11-23 at 19.27.15.jpeg" alt="Muskaan 1">
+      <img src="WhatsApp Image 2024-11-23 at 19.26.36.jpeg" alt="Muskaan 2">
+      
+    </div>
+
+    <button class="cta-button" onclick="goBackToIntroPage()">Go Back</button>
+  </div>
+
+  <script>
+    function goToApologyPage() {
+      // Hide the intro page and show the apology page
+      document.getElementById('intro-page').style.display = 'none';
+      document.getElementById('apology-page').style.display = 'block';
+    }
+
+    function goBackToIntroPage() {
+      // Hide the current page and show the intro page
+      document.getElementById('thank-you-page').style.display = 'none';
+      document.getElementById('intro-page').style.display = 'block';
+    }
+
+    function showForgivenessResponse() {
+      // Show the forgiveness response message and flowers
+      document.getElementById('forgiveness-response').style.display = 'block';
+      document.getElementById('flowers').style.display = 'block';
+
+      // Disable the "Yes" button after clicking it
+      document.querySelector('.forgiveness-button.yes').disabled = true;
+      document.querySelector('.forgiveness-button.yes').style.backgroundColor = '#ccc';
+      document.querySelector('.forgiveness-button.yes').style.cursor = 'not-allowed';
+      
+      // Show the "Thank You Muskaan" page
+      setTimeout(() => {
+        document.getElementById('apology-page').style.display = 'none';
+        document.getElementById('thank-you-page').style.display = 'block';
+      }, 2000); // Transition delay
+    }
+
+    // Running Away Effect for the "No" button
+    const noButton = document.getElementById('no-button');
+
+    noButton.addEventListener('mouseenter', () => {
+      noButton.classList.add('running');
+      moveButton(noButton);
+    });
+
+    function moveButton(button) {
+      const maxX = window.innerWidth - button.offsetWidth;
+      const maxY = window.innerHeight - button.offsetHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      button.style.left = `${randomX}px`;
+      button.style.top = `${randomY}px`;
+
+      // Keep it running away
+      setTimeout(() => {
+        moveButton(button);
+      }, 500);
+    }
+  </script>
+</body>
+</html>
